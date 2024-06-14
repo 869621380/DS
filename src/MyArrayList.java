@@ -51,9 +51,11 @@ public class MyArrayList<AnyType>implements Iterable<AnyType> {
   }
   private class ArrayListIterator implements java.util.Iterator<AnyType>{
     private int current=0;
+    @Override
     public boolean hasNext(){
       return current<size();
     }
+    @Override
     public AnyType next(){
       if(!hasNext())throw new NoSuchElementException();
       return theItems[current++];
