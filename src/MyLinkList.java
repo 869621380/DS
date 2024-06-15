@@ -1,6 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 public class MyLinkList<AnyType> implements Iterable<AnyType> {
+    public static void main(String[]args){}
+
     private static class Node<AnyType> {
         public Node(AnyType d, Node<AnyType> p, Node<AnyType> n) {
             date = d;
@@ -23,7 +25,7 @@ public class MyLinkList<AnyType> implements Iterable<AnyType> {
     public int size(){return theSize;}
     public boolean isEmpty(){return theSize==0;}
     public boolean add(AnyType x){
-        addBefore(getNode(size()),x);
+        add(size(),x);
         return true;
     }
     public void add(int idx,AnyType x){
@@ -44,7 +46,6 @@ public class MyLinkList<AnyType> implements Iterable<AnyType> {
     public java.util.Iterator<AnyType>iterator(){
         return new LinkedListIterator();
     }
-
     private class LinkedListIterator implements Iterator<AnyType> {
         private Node<AnyType>current=beginMaker.next;
         private int expectedModCount=modCount;
