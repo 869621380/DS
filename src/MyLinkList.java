@@ -1,8 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 public class MyLinkList<AnyType> implements Iterable<AnyType> {
-    public static void main(String[]args){}
-
     private static class Node<AnyType> {
         public Node(AnyType d, Node<AnyType> p, Node<AnyType> n) {
             date = d;
@@ -16,8 +14,8 @@ public class MyLinkList<AnyType> implements Iterable<AnyType> {
     public MyLinkList(){doClear();}
     public void clear(){doClear();}
     private void doClear(){
-        beginMaker=new Node<AnyType>(null,null,null);
-        endMaker=new Node<AnyType>(null,beginMaker,null);
+        beginMaker=new Node<>(null,null,null);
+        endMaker=new Node<>(null,beginMaker,null);
         beginMaker.next=endMaker;
         theSize=0;
         modCount++;
